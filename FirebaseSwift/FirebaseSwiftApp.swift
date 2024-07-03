@@ -9,9 +9,16 @@ import SwiftUI
 
 @main
 struct FirebaseSwiftApp: App {
+    
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    
+    
     var body: some Scene {
+        
+        let login = FirebaseViewModel()
+        
         WindowGroup {
-            ContentView()
+            ContentView().environmentObject(login)
         }
     }
 }
